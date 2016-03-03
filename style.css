@@ -1,5 +1,8 @@
-
-
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+* {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
 .findForm{
   margin-top: 10px;
 }
@@ -94,14 +97,17 @@ h1 {
 
 .windSpeedTitle{
   margin-left: 60px;
+  color: gray;
 }
 
 .descriptionTitle{
   margin-left: 60px;
+  color: gray;
 }
 
 .currentHumidityTitle {
   margin-left: 49px;
+  color: gray;
 }
 
 .currentHumidity{
@@ -124,3 +130,28 @@ h1 {
   border-bottom-left-radius: 12px;
 }
 /*//////////////////////////////////////////////////////////*/
+
+.otherDays{
+  font-size: 62px;
+}
+
+.otherDaysWeatherIcon{
+  margin-left: 11px;
+  margin-top: 2px;
+  width: 148px;
+  height: 112px;
+}
+/*//////////////////////////////////////////////////////////*/
+.history {
+  margin-top: 188px;
+  border-radius: 12px;
+  background-color: #222d42;
+  width: 233px;
+  height: 200px;
+}
+#historyTitle{
+  font-size: 15px;
+  color: white;
+  margin-top: -184px;
+  margin-left: 90px;
+}

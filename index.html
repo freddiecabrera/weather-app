@@ -27,23 +27,23 @@
       <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
       <span>&#8457;ahrenheitt</span>
       <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-      <span>&#8451;elcius</span>
+      <span>&#8451;elsius</span>
     </label>
   </div>
 
   <div class="row top-boxes">
     <div class="col-sm-4 top-odd top-outside-left-row"><p id='currentDay'>TODAY</p></div>
-    <div class="col-sm-2 top-even top-middle-row"><p>TOMORROW</p></div>
-    <div class="col-sm-2 top-odd top-middle-row"><p>NEXT</p></div>
-    <div class="col-sm-2 top-even top-middle-row"><p>NEXT</p></div>
-    <div class="col-sm-2 top-odd top-outside-right-row"><p>NEXT</p></div>
+      <div class="col-sm-2 top-even top-middle-row"><p>DAY 1</p></div>
+    <div class="col-sm-2 top-odd top-middle-row"><p>DAY 2</p></div>
+    <div class="col-sm-2 top-even top-middle-row"><p>DAY 3</p></div>
+    <div class="col-sm-2 top-odd top-outside-right-row"><p>DAY 4</p></div>
   </div>
 
   <div class="row bottom-boxes">
     <div class="col-sm-4 bottom-odd bottom-outside-left-row">
-      <p class="currentCity">New York</p>
+      <p class="currentCity"></p>
       <div class="tempAndIcon row">
-        <h1 class="currentTemp col-sm-6">70 &#8457;</h1>
+        <h1 class="currentTemp col-sm-6"></h1>
         <img class='weatherIcon col-sm-6' src="http://image005.flaticon.com/113/svg/108/108556.svg" alt="">
 
       </div>
@@ -54,16 +54,34 @@
         <span class='windSpeedTitle'>Wind</span>
       </div>
       <div class="row">
-        <span class='currentHumidity'>51</span>
-        <span class='description'>scattered clouds</span>
-        <span class='windSpeed'>4</span>
+        <span class='currentHumidity'></span>
+        <span class='description'></span>
+        <span class='windSpeed'></span>
       </div>
     </div>
-    <div class="col-sm-2 bottom-even bottom-middle-row">1</div>
-    <div class="col-sm-2 bottom-odd bottom-middle-row">1</div>
-    <div class="col-sm-2 bottom-even bottom-middle-row">1</div>
-    <div class="col-sm-2 bottom-odd bottom-outside-right-row">1</div>
+
+    <div class="col-sm-2 bottom-even bottom-middle-row">
+      <h1 id='day1' class='otherDays'>70 &#8457;</h1>
+      <img id='nextDayIcon1' class='otherDaysWeatherIcon col-sm-6' src="http://image005.flaticon.com/113/svg/108/108556.svg" alt="">
+    </div>
+    <div class="col-sm-2 bottom-odd bottom-middle-row">
+      <h1 id='day2' class='otherDays'>70 &#8457;</h1>
+      <img id='nextDayIcon2' class='otherDaysWeatherIcon col-sm-6' src="http://image005.flaticon.com/113/svg/108/108556.svg" alt="">
+    </div>
+    <div class="col-sm-2 bottom-even bottom-middle-row">
+      <h1 id='day3' class='otherDays'>70 &#8457;</h1>
+      <img id='nextDayIcon3' class='otherDaysWeatherIcon col-sm-6' src="http://image005.flaticon.com/113/svg/108/108556.svg" alt="">
+    </div>
+    <div class="col-sm-2 bottom-odd bottom-outside-right-row">
+      <h1 id='day4' class='otherDays'>70 &#8457;</h1>
+      <img id='nextDayIcon4' class='otherDaysWeatherIcon col-sm-6' src="http://image005.flaticon.com/113/svg/108/108556.svg" alt="">
+    </div>
   </div>
+
+  <div class="row">
+    <div class="history"><h1 id="historyTitle">HISTORY</h1></div>
+  </div>
+
 </div>
 
 
