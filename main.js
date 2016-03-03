@@ -9,7 +9,7 @@ var lat;
 var long;
 var initialLocation;
 
-navigator.geolocation.getCurrentPosition(function (position) {
+navigator.geolocation.getCurrentPosition(function(position) {
   lat = position.coords.latitude;
   long = position.coords.longitude;
   getCurrentCity();
@@ -20,7 +20,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
 function getCurrentCity() {
   $.ajax({
     method: 'GET',
-    url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+long+'&key=AIzaSyBuUxK6G7_cGQmw1Y1FUUHGak4_C2bX15I',
+    url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + long + '&key=AIzaSyBuUxK6G7_cGQmw1Y1FUUHGak4_C2bX15I',
     success: function (data) {
       initialLocation = data.results[0].address_components[3].long_name;
       console.log(initialLocation);
@@ -35,7 +35,7 @@ function getCurrentCity() {
 var ajaxCall = function () {
   $.ajax({
     method: 'GET',
-    url: 'http://api.openweathermap.org/data/2.5/weather?q=losangeles&units=imperial&appid=8b7d40ff29a3bc2cfbc6dc4a39ab4577',
+    url: 'http://api.openweathermap.org/data/2.5/forecast?q=' + initialLocation + '&units=imperial&appid=8b7d40ff29a3bc2cfbc6dc4a39ab4577',
     success: function (data) {
       console.log(data);
     },

@@ -1,0 +1,83 @@
+/*light blue 394666
+dark blue 313653
+
+light black 303141
+dark black 1B2322*/
+.findForm{
+  margin-top: 10px;
+}
+.form-control::-moz-placeholder {
+  color: #F7F7F5;
+}
+.form-control:-ms-input-placeholder {
+  color: #F7F7F5;
+}
+.form-control::-webkit-input-placeholder {
+  color: #F7F7F5;
+}
+.search-bar{
+  background-color: #2b2c3a;\
+}
+.btn{
+  background-color: #129BFD;
+  color: white;
+}
+
+.radioBtnText{
+  margin-top: 6px;
+  color: #1e283b;
+
+}
+
+/*//////////////////////////////////////////////////////////*/
+
+.top-odd{
+  background-color: #1e283b;
+  height: 40px;
+  border-color: white;
+}
+
+.top-even{
+  background-color: #2b2c3a;
+  height: 40px;
+  border-color: white;
+}
+/*.top-outside-right-row{
+  border-top-right-radius: 12px;
+}
+
+.top-outside-left-row{
+  border-top-left-radius: 12px;
+}*/
+p{
+  color: white;
+  margin-top: 11px;
+  text-align: center;
+}
+#currentDay{
+  color: white;
+  margin-top: 11px;
+  margin-left: 10px;
+}
+/*//////////////////////////////////////////////////////////*/
+
+.bottom-even{
+  background-color: #303141;
+  height: 250px;
+  border-color: white;
+}
+
+.bottom-odd{
+  background-color: #222d42;
+  height: 250px;
+  border-color: white;
+}
+/*
+.bottom-outside-right-row{
+  border-bottom-right-radius: 12px;
+}
+
+.bottom-outside-left-row{
+  border-bottom-left-radius: 12px;
+}*/
+/*//////////////////////////////////////////////////////////*/
