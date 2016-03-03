@@ -1,15 +1,34 @@
 'use strict';
 
 $(function(){
+  if($('#optionsRadios1').is(':checked')) {
+    unitOfMeasureSign = '℉';
+    unitOfMeasure = 'imperial';
+  } else {
+    unitOfMeasureSign = '°C';
+    unitOfMeasure = 'metric';
+  }
+
+
+
   $('.btn').click(newCity);
   $('.citySearchForm').keypress(function(e) {
     if(e.which === 13){
+      if($('#optionsRadios1').is(':checked')) {
+        unitOfMeasureSign = '℉';
+        unitOfMeasure = 'imperial';
+      } else {
+        unitOfMeasureSign = '°C';
+        unitOfMeasure = 'metric';
+      }
       newCity();
     }
   });
 });
 
 var
+unitOfMeasureSign,
+unitOfMeasure,
 lat,
 long,
 initialLocation,
@@ -60,7 +79,7 @@ var getCurrentCity = function() {
 var currentWeather = function () {
   $.ajax({
     method: 'GET',
-    url: 'http://api.openweathermap.org/data/2.5/weather?q=' + initialLocation + '&units=imperial&appid=8b7d40ff29a3bc2cfbc6dc4a39ab4577',
+    url: 'http://api.openweathermap.org/data/2.5/weather?q=' + initialLocation + '&units=' + unitOfMeasure +'&appid=8b7d40ff29a3bc2cfbc6dc4a39ab4577',
     success: function(data) {
       console.log(data);
       currentCity      = data.name;
@@ -70,7 +89,7 @@ var currentWeather = function () {
       currentWindSpeed = Math.floor(data.wind.speed);
       currentIcon      = data.weather[0].icon;
       $('.currentCity').text(currentCity);
-      $('.currentTemp').text(currentTemp + '℉');
+      $('.currentTemp').text(currentTemp + unitOfMeasureSign);
       $('.currentHumidity').text(currentHumidity);
       $('.description').text(description);
       $('.windSpeed').text(currentWindSpeed);
@@ -87,7 +106,7 @@ var currentWeather = function () {
 var forecast = function () {
   $.ajax({
     method: 'GET',
-    url: 'http://api.openweathermap.org/data/2.5/forecast?q=' + initialLocation + '&units=imperial&appid=8b7d40ff29a3bc2cfbc6dc4a39ab4577',
+    url: 'http://api.openweathermap.org/data/2.5/forecast?q=' + initialLocation + '&units=' + unitOfMeasure + '&appid=8b7d40ff29a3bc2cfbc6dc4a39ab4577',
     success: function (data) {
       day1Temp = Math.floor(data.list[0].main.temp);
       day2Temp = Math.floor(data.list[7].main.temp);
@@ -97,10 +116,10 @@ var forecast = function () {
       day2Icon = data.list[0].weather[0].icon;
       day3Icon = data.list[0].weather[0].icon;
       day4Icon = data.list[0].weather[0].icon;
-      $('#day1').text(day1Temp + '℉');
-      $('#day2').text(day2Temp + '℉');
-      $('#day3').text(day3Temp + '℉');
-      $('#day4').text(day4Temp + '℉');
+      $('#day1').text(day1Temp + unitOfMeasureSign);
+      $('#day2').text(day2Temp + unitOfMeasureSign);
+      $('#day3').text(day3Temp + unitOfMeasureSign);
+      $('#day4').text(day4Temp + unitOfMeasureSign);
       $('#nextDayIcon1').text(day1Icon);
       $('#nextDayIcon2').text(day2Icon);
       $('#nextDayIcon3').text(day3Icon);
@@ -118,15 +137,3 @@ var newCity = function () {
   currentWeather();
   forecast();
 };
-
-// var loadLocalStorage = function() {
-//   if (localStorage.cities === undefined) {
-//     localStorage.cities = "[]"
-//   }
-//   searchHistory = JSON.parse(localStorage.cities)
-//   //getMultiCities(storedCities)
-// };
-//
-// var saveLocalStorage = function() {
-//   localStorage.cities = JSON.stringify(storedCities)
-// };

@@ -3,6 +3,9 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
+body{
+  background-image: url('http://bit.ly/21KnlEO');
+}
 .findForm{
   margin-top: 10px;
 }
@@ -142,16 +145,4 @@ h1 {
   height: 112px;
 }
 /*//////////////////////////////////////////////////////////*/
-.history {
-  margin-top: 188px;
-  border-radius: 12px;
-  background-color: #222d42;
-  width: 233px;
-  height: 200px;
-}
-#historyTitle{
-  font-size: 15px;
-  color: white;
-  margin-top: -184px;
-  margin-left: 90px;
 }
