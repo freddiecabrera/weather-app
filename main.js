@@ -1,7 +1,7 @@
 'use strict';
 
 $(function(){
-  $('.btn').click(ajaxCall);
+  $('.btn').click();
 });
 var searchedCity;
 var city;
@@ -23,6 +23,8 @@ function getCurrentCity() {
     url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + long + '&key=AIzaSyBuUxK6G7_cGQmw1Y1FUUHGak4_C2bX15I',
     success: function (data) {
       initialLocation = data.results[0].address_components[3].long_name;
+      currentWeather();
+      forecast();
       console.log(initialLocation);
     },
     error: function functionName() {
@@ -32,7 +34,7 @@ function getCurrentCity() {
 }
 
 
-var ajaxCall = function () {
+var currentWeather = function () {
   $.ajax({
     method: 'GET',
     url: 'http://api.openweathermap.org/data/2.5/forecast?q=' + initialLocation + '&units=imperial&appid=8b7d40ff29a3bc2cfbc6dc4a39ab4577',
@@ -49,3 +51,16 @@ var ajaxCall = function () {
 
 
 };
+
+var forecast = function() {
+  $.ajax({
+    method: 'GET',
+    url: 'http://api.openweathermap.org/data/2.5/weather?q=' + initialLocation + '&units=imperial&appid=8b7d40ff29a3bc2cfbc6dc4a39ab4577',
+    success: function (data) {
+      console.log(data);
+    },
+    error: function functionName() {
+      console.error('shit didnt go through');
+    }
+  });
+}
