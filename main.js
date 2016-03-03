@@ -2,9 +2,9 @@
 
 $(function(){
   $('.btn').click(newCity);
-  $('.searchForm').keypress(function(e) {
+  $('.citySearchForm').keypress(function(e) {
     if(e.which === 13){
-      search();
+      newCity();
     }
   });
 });
@@ -26,7 +26,9 @@ day4Temp,
 day1Icon,
 day2Icon,
 day3Icon,
-day4Icon;
+day4Icon,
+searchHistory;
+
 
 navigator.geolocation.getCurrentPosition(function(position) {
   lat = position.coords.latitude;
@@ -45,7 +47,7 @@ var getCurrentCity = function() {
     success: function (data) {
       initialLocation = data.results[0].address_components[3].long_name;
       currentWeather();
-      //forecast();
+      forecast();
       console.log(initialLocation);
     },
     error: function functionName() {
@@ -112,6 +114,19 @@ var forecast = function () {
 
 var newCity = function () {
   initialLocation = $('#title').val();
+  $('#title').val('');
   currentWeather();
-  //forecast();
-}
+  forecast();
+};
+
+// var loadLocalStorage = function() {
+//   if (localStorage.cities === undefined) {
+//     localStorage.cities = "[]"
+//   }
+//   searchHistory = JSON.parse(localStorage.cities)
+//   //getMultiCities(storedCities)
+// };
+//
+// var saveLocalStorage = function() {
+//   localStorage.cities = JSON.stringify(storedCities)
+// };
